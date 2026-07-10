@@ -1,7 +1,20 @@
 import type { Metadata } from "next";
+import { Bricolage_Grotesque, Manrope } from "next/font/google";
 import "./globals.css";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fawnly.app"),
@@ -14,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><Header />{children}<Footer /></body></html>;
+  return <html lang="en" className={`${bricolage.variable} ${manrope.variable}`}><body><Header />{children}<Footer /></body></html>;
 }
