@@ -1,0 +1,1 @@
+export function AppStoreButton({secondary=false}:{secondary?:boolean}){return <a className={`btn ${secondary?"btn-ghost":"btn-primary"}`} href="https://apps.apple.com/in/app/fawnly/id6783288513">{secondary?"See how it works":"Download on the App Store"} <span aria-hidden="true">↗</span></a>}
