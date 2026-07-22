@@ -8,26 +8,26 @@ import { posts } from "./content/posts";
 export const metadata: Metadata = {
   title: "Fawnly — Calm Walking & Step Tracker for iPhone",
   description: "Fawnly is a calm, local-first walking and step tracker for iPhone with Apple Health activity, outdoor walk recording, private routes, widgets, goals, history, share cards, and beautiful themes.",
-  alternates: { canonical: "https://fawnly.app/" },
+  alternates: { canonical: "https://getfawnly.com/" },
 };
 
 export default function Home() {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "WebSite", "@id": "https://fawnly.app/#website", name: "Fawnly", url: "https://fawnly.app/", description: metadata.description },
+      { "@type": "WebSite", "@id": "https://getfawnly.com/#website", name: "Fawnly", url: "https://getfawnly.com/", description: metadata.description },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://fawnly.app/#app",
+        "@id": "https://getfawnly.com/#app",
         name: "Fawnly",
         applicationCategory: "HealthApplication",
         applicationSubCategory: "Walking and activity tracker",
         operatingSystem: "iOS",
         downloadUrl: "https://apps.apple.com/in/app/fawnly/id6783288513",
-        url: "https://fawnly.app/",
+        url: "https://getfawnly.com/",
         description: metadata.description,
         featureList: ["Apple Health activity summary", "Outdoor walk recording", "Private GPS route history", "Home Screen widgets", "Live Activities", "Week, Month, and Year history", "Themes and hero fonts", "Share cards"],
-        screenshot: ["https://fawnly.app/images/screens/latest/home-warm-green.webp", "https://fawnly.app/images/screens/latest/history-month.webp", "https://fawnly.app/images/screens/latest/themes.webp"],
+        screenshot: ["https://getfawnly.com/images/screens/latest/home-warm-green.webp", "https://getfawnly.com/images/screens/latest/history-month.webp", "https://getfawnly.com/images/screens/latest/themes.webp"],
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "Free download with an optional Fawnly Plus subscription." },
       },
       { "@type": "FAQPage", mainEntity: faqItems.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) },

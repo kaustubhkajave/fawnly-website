@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Fawnly handles Apple Health activity, recorded outdoor activities, precise routes, widgets, Live Activities, subscriptions, and other local app data.",
-  alternates: { canonical: "https://fawnly.app/privacy/" },
-  openGraph: { title: "Fawnly Privacy Policy", description: "Fawnly is local-first, with no account, ads, cross-app tracking, or Fawnly cloud sync.", url: "https://fawnly.app/privacy/" },
+  alternates: { canonical: "https://getfawnly.com/privacy/" },
+  openGraph: { title: "Fawnly Privacy Policy", description: "Fawnly is local-first, with no account, ads, cross-app tracking, or Fawnly cloud sync.", url: "https://getfawnly.com/privacy/" },
 };
 
 export default function Privacy() {

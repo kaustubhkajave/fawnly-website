@@ -37,6 +37,12 @@ npm run build
 
 The project uses Next.js static export (`output: "export"`) and can be deployed to any static host. The generated output is in `out/`.
 
+### GitHub Pages
+
+The workflow in `.github/workflows/deploy-pages.yml` builds and deploys `out/` whenever changes are pushed to `main`. In the GitHub repository, open **Settings → Pages** and set **Source** to **GitHub Actions** rather than **Deploy from a branch**.
+
+The root custom domain is preserved by `public/CNAME`, and `public/.nojekyll` prevents GitHub Pages from applying Jekyll processing to the exported Next.js files.
+
 ## Adding blog posts
 
 Posts are defined once in `app/content/posts.ts` and feed the home preview, updates index, static post routes, metadata, and Article structured data. Add a post object there, ensure the slug is included by `generateStaticParams`, and add its route to the sitemap.
@@ -44,5 +50,5 @@ Posts are defined once in `app/content/posts.ts` and feed the home preview, upda
 ## Notes
 
 - Privacy, Support, and Terms reflect the July 22, 2026 source documents. Keep them synchronized with the app and store listing when behavior changes.
-- Update `https://fawnly.app` in metadata and sitemap if the production domain changes.
+- Production URLs, canonical metadata, sitemap entries, and `public/CNAME` use `https://getfawnly.com`.
 - The App Store CTA points to the India App Store URL supplied for Fawnly.

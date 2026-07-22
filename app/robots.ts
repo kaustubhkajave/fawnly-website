@@ -1,3 +1,3 @@
 import { MetadataRoute } from 'next';
 export const dynamic = 'force-static';
-export default function robots():MetadataRoute.Robots{return {rules:{userAgent:'*',allow:'/'},sitemap:'https://fawnly.app/sitemap.xml'}}
+export default function robots():MetadataRoute.Robots{return {rules:{userAgent:'*',allow:'/'},sitemap:'https://getfawnly.com/sitemap.xml'}}

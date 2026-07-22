@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Support",
   description: "Get help with Fawnly, Apple Health permissions, outdoor activity recording, private routes, widgets, Live Activities, reminders, and Fawnly Plus.",
-  alternates: { canonical: "https://fawnly.app/support/" },
-  openGraph: { title: "Fawnly Support", description: "Help with Apple Health, activity recording, routes, widgets, reminders, and Fawnly Plus.", url: "https://fawnly.app/support/" },
+  alternates: { canonical: "https://getfawnly.com/support/" },
+  openGraph: { title: "Fawnly Support", description: "Help with Apple Health, activity recording, routes, widgets, reminders, and Fawnly Plus.", url: "https://getfawnly.com/support/" },
 };
 
 const supportSections = [

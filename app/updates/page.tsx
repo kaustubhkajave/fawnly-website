@@ -5,8 +5,8 @@ import { posts } from "../content/posts";
 export const metadata: Metadata = {
   title: "Fawnly Updates & Walking Journal",
   description: "Product updates and thoughtful notes about Apple Health, outdoor walking, private activity tracking, step goals, and building a gentler walking habit.",
-  alternates: { canonical: "https://fawnly.app/updates/" },
-  openGraph: { title: "Fawnly Updates & Walking Journal", description: "Product updates and thoughtful notes for the walk ahead.", url: "https://fawnly.app/updates/" },
+  alternates: { canonical: "https://getfawnly.com/updates/" },
+  openGraph: { title: "Fawnly Updates & Walking Journal", description: "Product updates and thoughtful notes for the walk ahead.", url: "https://getfawnly.com/updates/" },
 };
 
 export default function Updates() {

@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Use",
   description: "Terms governing Fawnly, activity recording, widgets, route sharing, Apple Health features, and Fawnly Plus subscriptions.",
-  alternates: { canonical: "https://fawnly.app/terms/" },
-  openGraph: { title: "Fawnly Terms of Use", description: "Terms for using Fawnly and Fawnly Plus.", url: "https://fawnly.app/terms/" },
+  alternates: { canonical: "https://getfawnly.com/terms/" },
+  openGraph: { title: "Fawnly Terms of Use", description: "Terms for using Fawnly and Fawnly Plus.", url: "https://getfawnly.com/terms/" },
 };
 
 export default function Terms() {
