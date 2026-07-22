@@ -18,11 +18,15 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fawnly.app"),
-  title: { default: "Fawnly — Calm Step Tracker for iPhone", template: "%s — Fawnly" },
-  description: "Fawnly is a calm step tracker for iPhone that helps you follow your steps, distance, goals, and walking progress with beautiful themes powered by Apple Health.",
-  alternates: { canonical: "https://fawnly.app" },
-  openGraph: { title: "Fawnly — Calm Step Tracker for iPhone", description: "Walk gently. Track beautifully.", url: "https://fawnly.app", siteName: "Fawnly", type: "website", images: [{ url: "/images/app-icon.png", width: 1024, height: 1024, alt: "Fawnly app icon" }] },
-  twitter: { card: "summary_large_image", title: "Fawnly — Calm Step Tracker for iPhone", description: "Walk gently. Track beautifully." },
+  title: { default: "Fawnly — Calm Walking & Step Tracker for iPhone", template: "%s — Fawnly" },
+  description: "Fawnly is a calm, local-first walking and step tracker for iPhone with Apple Health activity, outdoor walk recording, private routes, widgets, goals, history, share cards, and beautiful themes.",
+  keywords: ["step tracker for iPhone", "walking tracker app", "Apple Health step tracker", "walk recording app", "daily step goal app", "walking progress tracker", "pedometer", "private route tracker"],
+  category: "health and fitness",
+  applicationName: "Fawnly",
+  alternates: { canonical: "https://fawnly.app/" },
+  openGraph: { title: "Fawnly — Calm Walking & Step Tracker for iPhone", description: "See your Apple Health activity, record outdoor walks, keep private routes, and follow richer progress in a calm, local-first app.", url: "https://fawnly.app/", siteName: "Fawnly", locale: "en_US", type: "website", images: [{ url: "/images/app-icon.png", width: 1024, height: 1024, type: "image/png", alt: "Fawnly deer app icon on deep forest green" }] },
+  twitter: { card: "summary", title: "Fawnly — Calm Walking & Step Tracker for iPhone", description: "Walk gently. Track beautifully—with Apple Health activity, outdoor recordings, private routes, widgets, and expressive themes.", images: ["/images/app-icon.png"] },
+  appleWebApp: { capable: true, title: "Fawnly", statusBarStyle: "default" },
   icons: { icon: "/images/app-icon.png" },
 };
 

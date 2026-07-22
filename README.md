@@ -8,13 +8,17 @@ The official marketing site for Fawnly, a calm step tracker for iPhone.
 npm install
 ```
 
-Place app assets in `public/images/`. The current site uses the supplied files:
+Current optimized app assets live in `public/images/`:
 
 - `app-icon.png`
-- `home-green.PNG`, `home-blue.PNG`
-- `history-month.PNG`, `themes.PNG`, `share-card.PNG`
+- `screens/latest/home-warm-green.webp`
+- `screens/latest/history-month.webp`
+- `screens/latest/settings.webp`
+- `screens/latest/themes.webp`
+- `screens/latest/share-card.webp`
+- illustrated Home screens for Fawn Pond, Honeydew Meadow, Sheep Meadow, and Heart Bloom
 
-If you replace the screenshots, keep the same paths or update `app/components/HomeSections.tsx`.
+The screenshots include their iPhone frames. If you replace them, keep the same transparent portrait format and paths or update `app/components/HomeSections.tsx`.
 
 ## Local development
 
@@ -35,10 +39,10 @@ The project uses Next.js static export (`output: "export"`) and can be deployed 
 
 ## Adding blog posts
 
-Starter posts are defined in `app/updates/[slug]/page.tsx` and listed in `app/updates/page.tsx` plus the home page preview. Add a new entry to the data object with a slug, title, description, date, tag, and body paragraphs, then add it to the listing arrays and sitemap if needed.
+Posts are defined once in `app/content/posts.ts` and feed the home preview, updates index, static post routes, metadata, and Article structured data. Add a post object there, ensure the slug is included by `generateStaticParams`, and add its route to the sitemap.
 
 ## Notes
 
-- Replace the placeholder privacy policy in `app/privacy/page.tsx` with the final approved policy before launch.
+- Privacy, Support, and Terms reflect the July 22, 2026 source documents. Keep them synchronized with the app and store listing when behavior changes.
 - Update `https://fawnly.app` in metadata and sitemap if the production domain changes.
 - The App Store CTA points to the India App Store URL supplied for Fawnly.
