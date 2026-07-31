@@ -14,7 +14,7 @@ export function Footer() {
             <a href="/privacy">Privacy Policy</a>
             <a href="/terms">Terms</a>
             <a href="/support">Support</a>
-            <a href="/updates">Updates</a>
+            <a href="/blog">Blog</a>
             <a href="mailto:fawnlyapp@outlook.com">fawnlyapp@outlook.com</a>
           </div>
         </div>

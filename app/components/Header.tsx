@@ -5,7 +5,7 @@ const links = [
   ["Activities", "/#activities"],
   ["Themes", "/#themes"],
   ["Privacy", "/privacy"],
-  ["Updates", "/updates"],
+  ["Blog", "/blog"],
   ["Support", "/support"],
 ];
 

@@ -1,2 +1,0 @@
-export type Post={title:string;description:string;date:string;slug:string;tags:string[]};
-export function BlogCard({post}:{post:Post}){return <article className="card blog-card"><time dateTime={post.date}>{new Date(post.date+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</time><h3 className="h3">{post.title}</h3><p>{post.description}</p><a href={`/updates/${post.slug}`}>Read update <span aria-hidden="true">↗</span></a></article>}

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { AppStoreButton } from "./components/AppStoreButton";
-import { BlogCard } from "./components/BlogCard";
+import { BlogArticleCard } from "./components/BlogArticleCard";
 import { Activities, FAQ, Features, HeroScene, Plus, ScreenshotStory, Themes } from "./components/HomeSections";
 import { faqItems } from "./content/faqs";
-import { posts } from "./content/posts";
+import { blogPosts } from "./content/blogPosts";
 
 export const metadata: Metadata = {
   title: "Fawnly — Calm Walking & Step Tracker for iPhone",
@@ -71,8 +71,8 @@ export default function Home() {
 
         <section className="section">
           <div className="wrap">
-            <div className="section-intro"><div><span className="eyebrow">From the Fawnly journal</span><h2 className="h2">Notes for the<br /><span className="serif">walk ahead.</span></h2></div><a className="btn btn-ghost" href="/updates">See all updates ↗</a></div>
-            <div className="blog-grid">{posts.slice(0, 3).map(post => <BlogCard key={post.slug} post={post} />)}</div>
+            <div className="section-intro"><div><span className="eyebrow">The Fawnly blog</span><h2 className="h2">Practical guides.<br /><span className="serif">Gentler progress.</span></h2></div><a className="btn btn-ghost" href="/blog">Explore the blog ↗</a></div>
+            <div className="blog-grid blog-grid-featured">{blogPosts.slice(0, 1).map((post) => <BlogArticleCard key={post.slug} post={post} />)}</div>
           </div>
         </section>
         <FAQ />
