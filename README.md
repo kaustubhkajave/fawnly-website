@@ -45,7 +45,7 @@ The root custom domain is preserved by `public/CNAME`, and `public/.nojekyll` pr
 
 ## Adding blog posts
 
-Blog metadata is defined in `app/content/blogPosts.ts` and feeds the homepage preview, blog index, static post routes, metadata, and BlogPosting structured data. Add each post there, include its semantic article content under `app/blog/[slug]/page.tsx`, and add the route to `app/sitemap.ts`.
+Blog metadata is defined in `app/content/blogPosts.ts` in newest-first order and feeds the homepage preview, blog index, static post routes, metadata, sitemap, and BlogPosting structured data. Add each post there, include its semantic article content under `app/blog/[slug]/page.tsx`, and map its slug to the article in that page’s route switch.
 
 ## Notes
 

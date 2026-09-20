@@ -14,6 +14,19 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "How to Show Your Step Count on Your iPhone Home Screen",
+    description: "Put your daily steps on your iPhone Home Screen with Fawnly’s free widget. Follow the setup guide, connect Apple Health, and fix missing or delayed counts.",
+    datePublished: "2026-09-20",
+    dateModified: "2026-09-20",
+    displayDate: "September 20, 2026",
+    slug: "how-to-show-step-count-on-iphone-home-screen",
+    tags: ["iPhone widgets", "Step count", "Apple Health"],
+    author: "Fawnly Team",
+    image: "/images/screens/latest/home-warm-green.webp",
+    imageAlt: "Fawnly’s in-app daily summary showing steps, a daily goal, and weekly progress",
+    socialImage: "/images/blog/iphone-home-screen-steps-og.png",
+  },
+  {
     title: "How to Track Steps on iPhone Without an Apple Watch",
     description: "Your iPhone can count steps without an Apple Watch. Learn how to view steps in Apple Health, fix missing data, and track progress with Fawnly.",
     datePublished: "2026-07-31",

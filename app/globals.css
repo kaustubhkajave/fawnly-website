@@ -188,6 +188,9 @@ img { max-width: 100%; }
 .quick-answer { margin: 38px 0 28px; padding: 28px 30px; border: 1px solid #cbded1; border-radius: 24px; background: #edf3ed; }
 .quick-answer p { margin: 12px 0 0; color: #40564b; font-size: 1rem; line-height: 1.75; }
 .blog-post .post-cover { margin-block: 48px; }
+.blog-app-figure { margin: 48px 0; }
+.blog-app-figure .post-cover { margin: 0 0 16px; }
+.blog-app-figure figcaption { max-width: 580px; margin-inline: auto; color: #627169; font-size: .82rem; line-height: 1.7; text-align: center; }
 .blog-prose { max-width: 760px; margin-inline: auto; }
 .blog-prose ol { margin-bottom: 20px; }
 .blog-prose li + li { margin-top: 9px; }

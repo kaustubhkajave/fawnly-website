@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f6ef"/>
+  <circle cx="1110" cy="565" r="270" fill="#e4eee5"/>
+  <circle cx="1160" cy="600" r="180" fill="#cbded1"/>
+  <rect x="64" y="58" width="110" height="38" rx="19" fill="#1e4c3b"/>
+  <text x="119" y="84" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="21" font-weight="700">Fawnly</text>
+  <text x="195" y="83" fill="#627169" font-family="Arial, sans-serif" font-size="19" letter-spacing="2">THE IPHONE WALKING GUIDE</text>
+  <g fill="#183b2d" font-family="Arial, sans-serif" font-size="66" font-weight="700" letter-spacing="-2">
+    <text x="64" y="213">How to show your step count</text>
+    <text x="64" y="293">on your iPhone</text>
+    <text x="64" y="373">Home Screen</text>
+  </g>
+  <text x="66" y="442" fill="#627169" font-family="Arial, sans-serif" font-size="26">A simple setup guide for Fawnly’s free step widget.</text>
+  <path d="M64 499H780" stroke="#cbded1" stroke-width="2"/>
+  <text x="66" y="552" fill="#1e4c3b" font-family="Arial, sans-serif" font-size="23">Connect Apple Health. Add your widget. Keep moving gently.</text>
+  <text x="66" y="593" fill="#627169" font-family="Arial, sans-serif" font-size="18">getfawnly.com</text>
+</svg>

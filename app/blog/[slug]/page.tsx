@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AppStoreButton } from "../../components/AppStoreButton";
 import { PhoneMockup } from "../../components/PhoneMockup";
-import { blogPosts, blogPostsBySlug } from "../../content/blogPosts";
+import { blogPosts, blogPostsBySlug, type BlogPost } from "../../content/blogPosts";
 
 const SITE_URL = "https://getfawnly.com";
 
@@ -60,8 +60,7 @@ function DownloadCallout({ final = false }: { final?: boolean }) {
   );
 }
 
-function TrackStepsWithoutWatchArticle() {
-  const post = blogPosts[0];
+function BlogStructuredData({ post }: { post: BlogPost }) {
   const canonical = SITE_URL + "/blog/" + post.slug + "/";
   const articleData = {
     "@context": "https://schema.org",
@@ -91,6 +90,17 @@ function TrackStepsWithoutWatchArticle() {
       { "@type": "ListItem", position: 3, name: post.title, item: canonical },
     ],
   };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
+    </>
+  );
+}
+
+function TrackStepsWithoutWatchArticle() {
+  const post = blogPostsBySlug["how-to-track-steps-on-iphone-without-apple-watch"];
 
   return (
     <>
@@ -188,14 +198,119 @@ function TrackStepsWithoutWatchArticle() {
           <DownloadCallout final />
         </article>
       </main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
+      <BlogStructuredData post={post} />
+    </>
+  );
+}
+
+function WidgetDownloadCallout({ final = false }: { final?: boolean }) {
+  return (
+    <aside className={"blog-cta" + (final ? " blog-cta-final" : "")} aria-label="Get Fawnly’s free step widget">
+      <div>
+        <span className="eyebrow">Free Home Screen widget</span>
+        <h2>{final ? "Keep your next small win in sight." : "Your daily steps, a glance away."}</h2>
+        <p>See today’s steps and goal progress with Fawnly. Download the app, connect Apple Health, and add your widget. No account required; no Plus subscription needed for Home Screen widgets.</p>
+      </div>
+      <AppStoreButton />
+    </aside>
+  );
+}
+
+function HomeScreenStepsArticle() {
+  const post = blogPostsBySlug["how-to-show-step-count-on-iphone-home-screen"];
+
+  return (
+    <>
+      <main className="page">
+        <article className="post blog-post">
+          <nav className="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a><span aria-hidden="true">/</span><a href="/blog">Blog</a><span aria-hidden="true">/</span><span aria-current="page">Home Screen steps</span>
+          </nav>
+          <div className="post-meta">
+            <span>By {post.author}</span><span aria-hidden="true">&middot;</span><time dateTime={post.datePublished}>{post.displayDate}</time><span aria-hidden="true">&middot;</span><span>5 min read</span>
+          </div>
+          <h1 className="display post-title">{post.title}</h1>
+          <p className="post-deck">See how your day is moving without opening an app every time. Here’s how to put your steps and daily goal progress on your iPhone Home Screen with Fawnly.</p>
+
+          <div className="quick-answer">
+            <span className="eyebrow">The short answer</span>
+            <p><strong>Use a step-count widget such as Fawnly’s free Today widget.</strong> Install and open Fawnly, allow it to read Steps from Apple Health, then touch and hold an empty part of your Home Screen. Choose Edit → Add Widget, search for Fawnly, and add the Today widget.</p>
+          </div>
+
+          <WidgetDownloadCallout />
+
+          <div className="prose blog-prose">
+            <p>A step total is easier to notice when it’s beside the apps you already use. You might glance at it before lunch, after a walk, or at the end of the day. It’s a small way to keep your progress visible without making walking another task to manage.</p>
+            <p>This guide uses Fawnly’s Home Screen widget. You’ll need your iPhone, Fawnly, and permission to read your Apple Health steps. An Apple Watch isn’t required.</p>
+
+            <h2 id="connect-health">1. Open Fawnly and connect Apple Health</h2>
+            <p>Download Fawnly using the App Store button above, then open it and follow the setup prompts. When asked for Health access, allow Fawnly to read <strong>Steps</strong>. You can choose which other activity categories to share.</p>
+            <p>If you previously skipped that permission, open <strong>Health → Summary → your profile picture → Apps</strong> under Privacy. Select Fawnly and enable access to Steps. Return to Fawnly and check that your daily summary has data.</p>
+            <p>Fawnly displays activity from Apple Health. Apple explains how automatic step counting and app permissions work in its guide to <a href="https://support.apple.com/en-us/104997">using the Health app</a>.</p>
+
+            <h2 id="add-widget">2. Add the step widget to your Home Screen</h2>
+            <ol>
+              <li><strong>Return to your iPhone Home Screen.</strong> Press and hold a blank space until the icons start moving.</li>
+              <li><strong>Open the widget gallery.</strong> Tap Edit, then Add Widget. On older iOS versions, use the + button instead.</li>
+              <li><strong>Search for Fawnly.</strong> Select it to see its available widgets.</li>
+              <li><strong>Choose the Today widget.</strong> Browse the available layouts, then tap Add Widget.</li>
+              <li><strong>Place it where you’ll notice it.</strong> Drag it into position and tap Done.</li>
+            </ol>
+            <p>You should now have a view of today’s steps and goal progress on your Home Screen. Apple’s <a href="https://support.apple.com/en-us/118610">widget setup guide</a> also covers adding and rearranging widgets.</p>
+
+            <h2 id="make-it-useful">3. Make it useful for your day</h2>
+            <p>Try keeping the widget on your first Home Screen, near something you open often. If you tuck it inside a rotating widget stack, your steps may not always be the item you see.</p>
+            <p>In Fawnly, choose a daily goal that fits your routine. The widget gives you a quick check-in; open the app when you want your activity summary and recent progress. Home Screen widgets are free, while Fawnly Plus is optional for additional features.</p>
+          </div>
+
+          <figure className="blog-app-figure">
+            <div className="post-cover">
+              <PhoneMockup src={post.image} alt={post.imageAlt} />
+            </div>
+            <figcaption>Inside Fawnly: your daily activity summary. The Home Screen widget gives you a separate, smaller view of today’s steps and goal progress.</figcaption>
+          </figure>
+
+          <div className="prose blog-prose">
+            <h2 id="troubleshooting">If your step widget is missing or not updating</h2>
+            <h3>Fawnly doesn’t appear in the widget gallery</h3>
+            <p>Make sure Fawnly has finished installing, then open it and complete setup before checking the gallery again. If it still doesn’t appear, check the App Store for an update and try restarting your iPhone.</p>
+
+            <h3>The widget is blank or shows no steps</h3>
+            <p>First check whether Apple Health has steps for today. If it does, review Fawnly’s Steps permission using the path above, then reopen Fawnly. If Health itself has no steps, check Fitness Tracking under <strong>Settings → Privacy &amp; Security → Motion &amp; Fitness</strong>, and remember to carry your phone while walking.</p>
+
+            <h3>The widget shows an older total than the app</h3>
+            <p>A Home Screen widget is a periodic snapshot, so it may lag behind your latest activity. iOS controls widget refreshes; it won’t necessarily update with every step. Open Fawnly to check the latest available data and give the widget time to refresh. If it stays stuck, try removing and adding the widget again, or visit <a href="/support">Fawnly Support</a>.</p>
+
+            <h2>Frequently asked questions</h2>
+            <h3>Do I need an Apple Watch?</h3>
+            <p>No. Your iPhone can supply step data while you carry it. Our guide to <a href="/blog/how-to-track-steps-on-iphone-without-apple-watch">tracking steps without an Apple Watch</a> explains how that works and what to check when steps are missing.</p>
+
+            <h3>Do I need Fawnly Plus for the widget?</h3>
+            <p>No. Fawnly’s Home Screen widgets are free. You can try the step widget without subscribing or creating an account.</p>
+
+            <h3>Does the step widget need my location?</h3>
+            <p>No. Viewing Apple Health steps doesn’t require Fawnly to use GPS. Location is requested separately when you choose to record an outdoor activity. See our <a href="/privacy">Privacy Policy</a> for details.</p>
+
+            <h3>Is this the same as a Lock Screen widget?</h3>
+            <p>No. These instructions add a widget beside your app icons on the Home Screen. Fawnly’s Live Activity during an outdoor recording is a separate feature; it isn’t an always-visible daily step widget on the Lock Screen.</p>
+          </div>
+
+          <WidgetDownloadCallout final />
+        </article>
+      </main>
+      <BlogStructuredData post={post} />
     </>
   );
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  if (!blogPostsBySlug[slug]) notFound();
-  return <TrackStepsWithoutWatchArticle />;
+  switch (slug) {
+    case "how-to-show-step-count-on-iphone-home-screen":
+      return <HomeScreenStepsArticle />;
+    case "how-to-track-steps-on-iphone-without-apple-watch":
+      return <TrackStepsWithoutWatchArticle />;
+    default:
+      notFound();
+  }
 }
