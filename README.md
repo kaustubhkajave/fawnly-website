@@ -20,6 +20,14 @@ Current optimized app assets live in `public/images/`:
 
 The screenshots include their iPhone frames. If you replace them, keep the same transparent portrait format and paths or update `app/components/HomeSections.tsx`.
 
+`PhoneMockup` serves resized copies (`-400w`, `-640w`, `-960w`) through `srcset`, and the favicons (`public/favicon.ico`, `public/apple-touch-icon.png`, `images/icon-192.png`, `images/app-icon-128.png`) are generated from `app-icon.png`. After replacing a screenshot or the icon, regenerate them:
+
+```bash
+npm run images
+```
+
+The default social sharing image is `public/images/og/fawnly-og.png` (1200×630). Pages that set their own `openGraph` metadata should spread `sharedOpenGraph` and include `defaultSocialImage` from `app/content/site.ts`, because Next.js replaces the layout’s `openGraph` object rather than merging it.
+
 ## Local development
 
 ```bash
@@ -45,7 +53,7 @@ The root custom domain is preserved by `public/CNAME`, and `public/.nojekyll` pr
 
 ## Adding blog posts
 
-Blog metadata is defined in `app/content/blogPosts.ts` in newest-first order and feeds the homepage preview, blog index, static post routes, metadata, sitemap, and BlogPosting structured data. Add each post there, include its semantic article content under `app/blog/[slug]/page.tsx`, and map its slug to the article in that page’s route switch.
+Blog metadata is defined in `app/content/blogPosts.ts` in newest-first order and feeds the homepage preview, blog index, static post routes, metadata, sitemap, and BlogPosting structured data. Add each post there, include its semantic article content under `app/blog/[slug]/page.tsx`, and map its slug to the article in that page’s route switch. Give each post a 1200×630 PNG `socialImage` in `public/images/blog/`, and use trailing slashes in internal links (for example `/blog/`) so they don’t redirect.
 
 ## Notes
 

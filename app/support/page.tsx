@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { defaultSocialImage, sharedOpenGraph } from "../content/site";
 
 export const metadata: Metadata = {
   title: "Support",
   description: "Get help with Fawnly, Apple Health permissions, outdoor activity recording, private routes, widgets, Live Activities, reminders, and Fawnly Plus.",
   alternates: { canonical: "https://getfawnly.com/support/" },
-  openGraph: { title: "Fawnly Support", description: "Help with Apple Health, activity recording, routes, widgets, reminders, and Fawnly Plus.", url: "https://getfawnly.com/support/" },
+  openGraph: { ...sharedOpenGraph, title: "Fawnly Support", description: "Help with Apple Health, activity recording, routes, widgets, reminders, and Fawnly Plus.", url: "https://getfawnly.com/support/", images: [defaultSocialImage] },
+  twitter: { card: "summary_large_image", title: "Fawnly Support", description: "Help with Apple Health, activity recording, routes, widgets, reminders, and Fawnly Plus.", images: [defaultSocialImage.url] },
 };
 
 const supportSections = [
@@ -28,7 +30,7 @@ export default function Support() {
     <main className="page"><div className="wrap">
       <div className="page-head support-head"><span className="eyebrow">We’re here to help</span><h1 className="display">Fawnly Support</h1><p>Fawnly is a calm, local-first companion for Apple Health activity, outdoor recording, private routes, widgets, goals, and history.</p><div className="support-contact"><span>Contact</span><a href="mailto:fawnlyapp@outlook.com">fawnlyapp@outlook.com</a></div></div>
       <div className="support-list">{supportSections.map(([title, body]) => <section className="card support-card" key={title as string}><h2>{title}</h2><p>{body}</p></section>)}</div>
-      <section className="card support-card support-privacy"><h2>Privacy and medical notice</h2><p>Fawnly requires no account. Apple Health data, recorded activities, routes, and widget snapshots stay on your device and are not sent to a Fawnly server. There are no ads, third-party analytics, or cross-app tracking. RevenueCat manages Plus and never receives health, activity, or route data. Fawnly is not a medical device and does not provide medical advice.</p><div className="inline-links"><a href="/privacy">Privacy Policy ↗</a><a href="/terms">Terms of Use ↗</a></div></section>
+      <section className="card support-card support-privacy"><h2>Privacy and medical notice</h2><p>Fawnly requires no account. Apple Health data, recorded activities, routes, and widget snapshots stay on your device and are not sent to a Fawnly server. There are no ads, third-party analytics, or cross-app tracking. RevenueCat manages Plus and never receives health, activity, or route data. Fawnly is not a medical device and does not provide medical advice.</p><div className="inline-links"><a href="/privacy/">Privacy Policy ↗</a><a href="/terms/">Terms of Use ↗</a></div></section>
     </div></main>
   );
 }

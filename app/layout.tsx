@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Manrope } from "next/font/google";
 import "./globals.css";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { defaultSocialImage, sharedOpenGraph } from "./content/site";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -24,10 +25,13 @@ export const metadata: Metadata = {
   category: "health and fitness",
   applicationName: "Fawnly",
   alternates: { canonical: "https://getfawnly.com/" },
-  openGraph: { title: "Fawnly — Calm Walking & Step Tracker for iPhone", description: "See your Apple Health activity, record outdoor walks, keep private routes, and follow richer progress in a calm, local-first app.", url: "https://getfawnly.com/", siteName: "Fawnly", locale: "en_US", type: "website", images: [{ url: "/images/app-icon.png", width: 1024, height: 1024, type: "image/png", alt: "Fawnly deer app icon on deep forest green" }] },
-  twitter: { card: "summary", title: "Fawnly — Calm Walking & Step Tracker for iPhone", description: "Walk gently. Track beautifully—with Apple Health activity, outdoor recordings, private routes, widgets, and expressive themes.", images: ["/images/app-icon.png"] },
+  openGraph: { ...sharedOpenGraph, title: "Fawnly — Calm Walking & Step Tracker for iPhone", description: "See your Apple Health activity, record outdoor walks, keep private routes, and follow richer progress in a calm, local-first app.", url: "https://getfawnly.com/", images: [defaultSocialImage] },
+  twitter: { card: "summary_large_image", title: "Fawnly — Calm Walking & Step Tracker for iPhone", description: "Walk gently. Track beautifully—with Apple Health activity, outdoor recordings, private routes, widgets, and expressive themes.", images: [defaultSocialImage.url] },
   appleWebApp: { capable: true, title: "Fawnly", statusBarStyle: "default" },
-  icons: { icon: "/images/app-icon.png" },
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "16x16 32x32 48x48" }, { url: "/images/icon-192.png", type: "image/png", sizes: "192x192" }],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

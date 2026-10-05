@@ -59,10 +59,10 @@ export function HeroScene() {
     <div className="hero-visual grid-dots" ref={ref}>
       <canvas ref={canvas} className="scene-canvas" aria-hidden="true" />
       <span className="orb one" /><span className="orb two" />
-      <div className="hero-badge"><img src="/images/app-icon.png" alt="" /></div>
-      <PhoneMockup priority className="hero-phone" src="/images/screens/latest/home-warm-green.webp" alt="Fawnly home screen showing 9,280 steps, distance, active calories, floors, daily goal progress, and a weekly chart" />
-      <PhoneMockup className="side-shot left" src="/images/screens/latest/home-fawn-pond.webp" alt="Fawnly Fawn Pond illustrated theme" />
-      <PhoneMockup className="side-shot right" src="/images/screens/latest/home-sheep-meadow.webp" alt="Fawnly Sheep Meadow illustrated theme" />
+      <div className="hero-badge"><img src="/images/app-icon-128.png" width={42} height={42} alt="" /></div>
+      <PhoneMockup priority className="hero-phone" sizes="(max-width: 850px) 63vw, 305px" src="/images/screens/latest/home-warm-green.webp" alt="Fawnly home screen showing 9,280 steps, distance, active calories, floors, daily goal progress, and a weekly chart" />
+      <PhoneMockup className="side-shot left" sizes="(max-width: 850px) 34vw, 185px" src="/images/screens/latest/home-fawn-pond.webp" alt="Fawnly Fawn Pond illustrated theme" />
+      <PhoneMockup className="side-shot right" sizes="(max-width: 850px) 34vw, 185px" src="/images/screens/latest/home-sheep-meadow.webp" alt="Fawnly Sheep Meadow illustrated theme" />
     </div>
   );
 }
@@ -137,9 +137,9 @@ export function Themes() {
         </div>
         <div className="theme-grid">{themes.map(([name, style]) => <div className={`theme ${style}`} key={name}>{name}</div>)}</div>
         <div className="theme-showcase" aria-label="Fawnly illustrated theme previews">
-          <PhoneMockup src="/images/screens/latest/home-honeydew-meadow.webp" alt="Fawnly Honeydew Meadow illustrated theme with a frog and melons" />
-          <PhoneMockup src="/images/screens/latest/home-fawn-pond.webp" alt="Fawnly Fawn Pond illustrated theme with a deer beside a pond" />
-          <PhoneMockup src="/images/screens/latest/home-heart-bloom.webp" alt="Fawnly Heart Bloom illustrated pink theme" />
+          <PhoneMockup sizes="(max-width: 850px) 31vw, 225px" src="/images/screens/latest/home-honeydew-meadow.webp" alt="Fawnly Honeydew Meadow illustrated theme with a frog and melons" />
+          <PhoneMockup sizes="(max-width: 850px) 31vw, 225px" src="/images/screens/latest/home-fawn-pond.webp" alt="Fawnly Fawn Pond illustrated theme with a deer beside a pond" />
+          <PhoneMockup sizes="(max-width: 850px) 31vw, 225px" src="/images/screens/latest/home-heart-bloom.webp" alt="Fawnly Heart Bloom illustrated pink theme" />
         </div>
       </div>
     </section>
@@ -151,7 +151,7 @@ export function Activities() {
     <section id="activities" className="section activities">
       <div className="wrap activities-grid">
         <div><span className="eyebrow">Outdoor activities, when you want them</span><h2 className="h2">Record the walk.<br /><span className="serif">Keep the route private.</span></h2><p>Start a Walk and follow active time, GPS distance, current and average pace, and an Apple Maps route. With background location, your recording can continue while Fawnly is off screen.</p><ul className="clean-list"><li>Pause, resume, and return to an activity in progress</li><li>Optional live steps during the session</li><li>Lock Screen and Dynamic Island Live Activity</li><li>Optional save and restore through Apple Health</li></ul></div>
-        <PhoneMockup className="activity-phone" src="/images/screens/latest/activity-recording.webp" alt="Fawnly recording an outdoor walk with an Apple Maps route, active time, distance, pace, steps, pause, and finish controls" />
+        <PhoneMockup className="activity-phone" width={1310} height={2710} src="/images/screens/latest/activity-recording.webp" alt="Fawnly recording an outdoor walk with an Apple Maps route, active time, distance, pace, steps, pause, and finish controls" />
       </div>
     </section>
   );

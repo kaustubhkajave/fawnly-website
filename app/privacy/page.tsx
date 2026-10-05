@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { defaultSocialImage, sharedOpenGraph } from "../content/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Fawnly handles Apple Health activity, recorded outdoor activities, precise routes, widgets, Live Activities, subscriptions, and other local app data.",
   alternates: { canonical: "https://getfawnly.com/privacy/" },
-  openGraph: { title: "Fawnly Privacy Policy", description: "Fawnly is local-first, with no account, ads, cross-app tracking, or Fawnly cloud sync.", url: "https://getfawnly.com/privacy/" },
+  openGraph: { ...sharedOpenGraph, title: "Fawnly Privacy Policy", description: "Fawnly is local-first, with no account, ads, cross-app tracking, or Fawnly cloud sync.", url: "https://getfawnly.com/privacy/", images: [defaultSocialImage] },
+  twitter: { card: "summary_large_image", title: "Fawnly Privacy Policy", description: "Fawnly is local-first, with no account, ads, cross-app tracking, or Fawnly cloud sync.", images: [defaultSocialImage.url] },
 };
 
 export default function Privacy() {
@@ -61,7 +63,7 @@ export default function Privacy() {
 
       <h2>Contact</h2>
       <p>For privacy or support questions, contact <a href="mailto:fawnlyapp@outlook.com">fawnlyapp@outlook.com</a>.</p>
-      <div className="legal-links"><a href="/support">Support</a><a href="/terms">Terms of Use</a></div>
+      <div className="legal-links"><a href="/support/">Support</a><a href="/terms/">Terms of Use</a></div>
     </article></main>
   );
 }

@@ -15,11 +15,21 @@ export default function Home() {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "WebSite", "@id": "https://getfawnly.com/#website", name: "Fawnly", url: "https://getfawnly.com/", description: metadata.description },
+      {
+        "@type": "Organization",
+        "@id": "https://getfawnly.com/#organization",
+        name: "Fawnly",
+        url: "https://getfawnly.com/",
+        logo: { "@type": "ImageObject", url: "https://getfawnly.com/images/app-icon.png", width: 1024, height: 1024 },
+        email: "fawnlyapp@outlook.com",
+      },
+      { "@type": "WebSite", "@id": "https://getfawnly.com/#website", name: "Fawnly", url: "https://getfawnly.com/", description: metadata.description, inLanguage: "en", publisher: { "@id": "https://getfawnly.com/#organization" } },
       {
         "@type": "SoftwareApplication",
         "@id": "https://getfawnly.com/#app",
         name: "Fawnly",
+        image: "https://getfawnly.com/images/app-icon.png",
+        publisher: { "@id": "https://getfawnly.com/#organization" },
         applicationCategory: "HealthApplication",
         applicationSubCategory: "Walking and activity tracker",
         operatingSystem: "iOS",
@@ -40,8 +50,10 @@ export default function Home() {
         <section className="hero">
           <div className="wrap hero-grid">
             <div className="hero-copy">
-              <span className="eyebrow">A calm, local-first walking companion</span>
-              <h1 className="display font-display">Walk gently.<br /><span className="serif">Track beautifully.</span></h1>
+              <h1 className="hero-title">
+                <span className="eyebrow">A calm step tracker for iPhone</span>
+                <span className="display font-display">Walk gently.<br /><span className="serif">Track beautifully.</span></span>
+              </h1>
               <p>See your Apple Health activity, record outdoor walks, keep private routes, use widgets, and follow richer walking progress—all in a step tracker designed to feel calm.</p>
               <div className="hero-actions"><AppStoreButton /><a className="btn btn-ghost" href="#features">See what’s new <span aria-hidden="true">↓</span></a></div>
             </div>
@@ -63,7 +75,7 @@ export default function Home() {
             <div className="eyebrow">Private by design</div>
             <h2 className="h2">Your movement stays<br />close to home.</h2>
             <p>Fawnly does not require an account and does not include Fawnly cloud sync. Apple Health activity, recorded sessions, precise routes, widget snapshots, and settings stay on your device. Location is requested only when you start an outdoor activity.</p>
-            <div className="inline-links"><a href="/privacy">Read the Privacy Policy ↗</a><a href="/support">Visit Support ↗</a></div>
+            <div className="inline-links"><a href="/privacy/">Read the Privacy Policy ↗</a><a href="/support/">Visit Support ↗</a></div>
           </div>
         </section>
 
@@ -71,8 +83,8 @@ export default function Home() {
 
         <section className="section">
           <div className="wrap">
-            <div className="section-intro"><div><span className="eyebrow">The Fawnly blog</span><h2 className="h2">Practical guides.<br /><span className="serif">Gentler progress.</span></h2></div><a className="btn btn-ghost" href="/blog">Explore the blog ↗</a></div>
-            <div className="blog-grid blog-grid-featured">{blogPosts.slice(0, 1).map((post) => <BlogArticleCard key={post.slug} post={post} />)}</div>
+            <div className="section-intro"><div><span className="eyebrow">The Fawnly blog</span><h2 className="h2">Practical guides.<br /><span className="serif">Gentler progress.</span></h2></div><a className="btn btn-ghost" href="/blog/">Explore the blog ↗</a></div>
+            <div className="blog-grid">{blogPosts.slice(0, 3).map((post) => <BlogArticleCard key={post.slug} post={post} />)}</div>
           </div>
         </section>
         <FAQ />

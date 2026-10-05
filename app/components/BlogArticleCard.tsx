@@ -10,7 +10,7 @@ export function BlogArticleCard({ post }: { post: BlogPost }) {
       </div>
       <h3 className="h3">{post.title}</h3>
       <p>{post.description}</p>
-      <a href={"/blog/" + post.slug}>Read the guide <span aria-hidden="true">&rarr;</span></a>
+      <a href={"/blog/" + post.slug + "/"}>Read the guide <span aria-hidden="true">&rarr;</span></a>
     </article>
   );
 }

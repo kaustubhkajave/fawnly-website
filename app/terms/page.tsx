@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { defaultSocialImage, sharedOpenGraph } from "../content/site";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
   description: "Terms governing Fawnly, activity recording, widgets, route sharing, Apple Health features, and Fawnly Plus subscriptions.",
   alternates: { canonical: "https://getfawnly.com/terms/" },
-  openGraph: { title: "Fawnly Terms of Use", description: "Terms for using Fawnly and Fawnly Plus.", url: "https://getfawnly.com/terms/" },
+  openGraph: { ...sharedOpenGraph, title: "Fawnly Terms of Use", description: "Terms for using Fawnly and Fawnly Plus.", url: "https://getfawnly.com/terms/", images: [defaultSocialImage] },
+  twitter: { card: "summary_large_image", title: "Fawnly Terms of Use", description: "Terms for using Fawnly and Fawnly Plus.", images: [defaultSocialImage.url] },
 };
 
 export default function Terms() {
@@ -54,7 +56,7 @@ export default function Terms() {
 
       <h2>Contact</h2>
       <p>Questions can be sent to <a href="mailto:fawnlyapp@outlook.com">fawnlyapp@outlook.com</a>.</p>
-      <div className="legal-links"><a href="/privacy">Privacy Policy</a><a href="/support">Support</a></div>
+      <div className="legal-links"><a href="/privacy/">Privacy Policy</a><a href="/support/">Support</a></div>
     </article></main>
   );
 }

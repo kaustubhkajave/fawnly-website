@@ -4,16 +4,16 @@ const links = [
   ["Features", "/#features"],
   ["Activities", "/#activities"],
   ["Themes", "/#themes"],
-  ["Privacy", "/privacy"],
-  ["Blog", "/blog"],
-  ["Support", "/support"],
+  ["Privacy", "/privacy/"],
+  ["Blog", "/blog/"],
+  ["Support", "/support/"],
 ];
 
 export function Header() {
   return (
     <header className="wrap nav">
       <a href="/" className="brand" aria-label="Fawnly home">
-        <Image src="/images/app-icon.png" width={34} height={34} alt="" priority />
+        <Image src="/images/app-icon-128.png" width={34} height={34} alt="" priority />
         Fawnly
       </a>
       <nav className="navlinks" aria-label="Main navigation">

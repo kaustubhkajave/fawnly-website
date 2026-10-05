@@ -5,8 +5,8 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
-    { path: "", lastModified: "2026-09-20" },
-    { path: "blog", lastModified: "2026-09-20" },
+    { path: "", lastModified: "2026-10-05" },
+    { path: "blog", lastModified: "2026-10-05" },
     ...blogPosts.map((post) => ({ path: "blog/" + post.slug, lastModified: post.dateModified })),
     { path: "support", lastModified: "2026-07-22" },
     { path: "privacy", lastModified: "2026-07-22" },
