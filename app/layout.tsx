@@ -27,6 +27,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://getfawnly.com/" },
   openGraph: { ...sharedOpenGraph, title: "Fawnly — Calm Walking & Step Tracker for iPhone", description: "See your Apple Health activity, record outdoor walks, keep private routes, and follow richer progress in a calm, local-first app.", url: "https://getfawnly.com/", images: [defaultSocialImage] },
   twitter: { card: "summary_large_image", title: "Fawnly — Calm Walking & Step Tracker for iPhone", description: "Walk gently. Track beautifully—with Apple Health activity, outdoor recordings, private routes, widgets, and expressive themes.", images: [defaultSocialImage.url] },
+  verification: { other: { "p:domain_verify": "8cd647c51712e98c3dd5c28f6f7349df" } },
   appleWebApp: { capable: true, title: "Fawnly", statusBarStyle: "default" },
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "16x16 32x32 48x48" }, { url: "/images/icon-192.png", type: "image/png", sizes: "192x192" }],
