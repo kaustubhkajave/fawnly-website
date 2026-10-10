@@ -270,6 +270,14 @@ function HomeScreenStepsArticle() {
               <li><strong>Place it where you’ll notice it.</strong> Drag it into position and tap Done.</li>
             </ol>
             <p>You should now have a view of today’s steps and goal progress on your Home Screen. Apple’s <a href="https://support.apple.com/en-us/118610">widget setup guide</a> also covers adding and rearranging widgets.</p>
+          </div>
+
+          <figure className="blog-app-figure">
+            <img className="blog-widget" src="/images/widgets/sheep-meadow-520w.webp" srcSet="/images/widgets/sheep-meadow-520w.webp 520w, /images/widgets/sheep-meadow.webp 1030w" sizes="(max-width: 850px) 90vw, 420px" width={1030} height={484} loading="lazy" decoding="async" alt="Fawnly medium Home Screen widget in the Sheep Meadow theme showing today’s steps, goal progress, distance, calories, and floors" />
+            <figcaption>The medium Fawnly widget shows today’s steps, goal progress, distance, calories, and floors. With Fawnly Plus, it can match your illustrated theme.</figcaption>
+          </figure>
+
+          <div className="prose blog-prose">
 
             <h2 id="make-it-useful">3. Make it useful for your day</h2>
             <p>Try keeping the widget on your first Home Screen, near something you open often. If you tuck it inside a rotating widget stack, your steps may not always be the item you see.</p>
@@ -491,7 +499,7 @@ function StepsADayArticle() {
             <div className="post-cover">
               <PhoneMockup src={post.image} alt={post.imageAlt} />
             </div>
-            <figcaption>Fawnly’s Home screen with an 8,000-step goal. You can change the goal at any time, or turn it off.</figcaption>
+            <figcaption>Fawnly’s Home screen with a 10,000-step goal. You can change the goal at any time, or turn it off.</figcaption>
           </figure>
 
           <div className="prose blog-prose">

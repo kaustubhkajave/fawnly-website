@@ -7,7 +7,7 @@ function sizedSrc(src: string, width: number) {
   return src.replace(/\.webp$/, `-${width}w.webp`);
 }
 
-export function PhoneMockup({src,alt,className="",priority=false,width=1390,height=2943,sizes="(max-width: 850px) 68vw, 320px"}:{src:string;alt:string;className?:string;priority?:boolean;width?:number;height?:number;sizes?:string}) {
+export function PhoneMockup({src,alt,className="",priority=false,width=1243,height=2620,sizes="(max-width: 850px) 68vw, 320px"}:{src:string;alt:string;className?:string;priority?:boolean;width?:number;height?:number;sizes?:string}) {
   const srcSet = SCREEN_WIDTHS.map((w) => `${sizedSrc(src, w)} ${w}w`).join(", ");
   if (priority) preload(sizedSrc(src, 640), { as: "image", imageSrcSet: srcSet, imageSizes: sizes, fetchPriority: "high" });
 

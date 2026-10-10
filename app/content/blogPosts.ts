@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["Apple Health", "Troubleshooting", "Step count"],
     author: "Fawnly Team",
     image: "/images/screens/latest/history-month.webp",
-    imageAlt: "Fawnly Month history showing total steps, daily average, best day, goal streak, and distance",
+    imageAlt: "Fawnly Month history showing total steps, a daily totals chart, goal days, daily average, best day, and distance",
     socialImage: "/images/blog/iphone-not-counting-steps-og.png",
   },
   {
@@ -35,8 +35,8 @@ export const blogPosts: BlogPost[] = [
     slug: "how-many-steps-a-day",
     tags: ["Step goals", "Walking", "Health research"],
     author: "Fawnly Team",
-    image: "/images/screens/latest/home-honeydew-meadow.webp",
-    imageAlt: "Fawnly Honeydew Meadow theme showing 9,280 steps, 116% of an 8,000-step daily goal, and a weekly chart",
+    image: "/images/screens/latest/home-sheep-meadow.webp",
+    imageAlt: "Fawnly Sheep Meadow theme showing 4,645 steps, 46% of a 10,000-step daily goal, and a weekly chart",
     socialImage: "/images/blog/how-many-steps-a-day-og.png",
   },
   {
@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["iPhone step tracking", "Apple Health", "Walking"],
     author: "Fawnly Team",
     image: "/images/screens/latest/home-warm-green.webp",
-    imageAlt: "Fawnly on iPhone showing 9,280 steps, distance, active calories, floors, a daily goal, and a weekly chart",
+    imageAlt: "Fawnly on iPhone showing 4,645 steps, distance, active calories, floors, a daily goal, and a weekly chart",
     socialImage: "/images/blog/how-to-track-steps-iphone-og.png",
   },
 ];

@@ -60,9 +60,9 @@ export function HeroScene() {
       <canvas ref={canvas} className="scene-canvas" aria-hidden="true" />
       <span className="orb one" /><span className="orb two" />
       <div className="hero-badge"><img src="/images/app-icon-128.png" width={42} height={42} alt="" /></div>
-      <PhoneMockup priority className="hero-phone" sizes="(max-width: 850px) 63vw, 305px" src="/images/screens/latest/home-warm-green.webp" alt="Fawnly home screen showing 9,280 steps, distance, active calories, floors, daily goal progress, and a weekly chart" />
-      <PhoneMockup className="side-shot left" sizes="(max-width: 850px) 34vw, 185px" src="/images/screens/latest/home-fawn-pond.webp" alt="Fawnly Fawn Pond illustrated theme" />
-      <PhoneMockup className="side-shot right" sizes="(max-width: 850px) 34vw, 185px" src="/images/screens/latest/home-sheep-meadow.webp" alt="Fawnly Sheep Meadow illustrated theme" />
+      <PhoneMockup priority className="hero-phone" sizes="(max-width: 850px) 63vw, 305px" src="/images/screens/latest/home-sheep-meadow.webp" alt="Fawnly Home in the Sheep Meadow illustrated theme showing 4,645 steps, distance, active calories, floors, 46% of a 10,000-step goal, and a weekly chart" />
+      <PhoneMockup className="side-shot left" sizes="(max-width: 850px) 34vw, 185px" src="/images/screens/latest/home-warm-green.webp" alt="Fawnly Home in the calm Warm Green theme" />
+      <PhoneMockup className="side-shot right" sizes="(max-width: 850px) 34vw, 185px" src="/images/screens/latest/share-card.webp" alt="Fawnly share card in the Heart Bloom theme" />
     </div>
   );
 }
@@ -95,10 +95,11 @@ export function Features() {
 }
 
 const stories = [
-  ["Your day, in one calm glance", "Follow steps, distance, active calories, floors, and goal progress in a Home view that stays quiet and clear.", "/images/screens/latest/home-warm-green.webp", "Fawnly Warm Green Home screen"],
-  ["Watch your progress take shape", "Move between Week, Month, and Year history to see totals, averages, best days, streaks, and distance over time.", "/images/screens/latest/history-month.webp", "Fawnly Month history showing total steps, daily average, best day, goal streak, and distance"],
-  ["Make the app feel like yours", "Choose from calm classic themes and illustrated worlds, then adjust the treatment and hero-number style for readability.", "/images/screens/latest/themes.webp", "Fawnly theme picker showing Fawn Pond and other illustrated themes"],
-  ["Share progress, thoughtfully", "Create polished day, week, or month cards. Route cards use a normalized silhouette instead of an Apple Maps background or raw coordinates.", "/images/screens/latest/share-card.webp", "Fawnly share-card preview using the Fawn Pond illustrated theme"],
+  ["Your day, in one calm glance", "Follow steps, distance, active calories, floors, and goal progress in a Home view that stays quiet and clear.", "/images/screens/latest/home-warm-green.webp", "Fawnly Home in the Warm Green theme showing 4,645 steps, distance, active calories, floors, goal progress, and a weekly chart"],
+  ["Steps or distance, your way", "Lead with steps or make distance the big number on Home, in miles or kilometres. Your other stats and the weekly chart stay right below.", "/images/screens/latest/home-distance.webp", "Fawnly Home leading with 2.1 miles of distance, with steps, active calories, and floors below"],
+  ["Watch your progress take shape", "Move between Week, Month, and Year history to see totals, averages, best days, streaks, and distance over time.", "/images/screens/latest/history-month.webp", "Fawnly Month history showing 77,472 total steps, a daily totals chart, goal days, daily average, best day, and distance"],
+  ["Make the app feel like yours", "Choose from calm classic themes and illustrated worlds, then adjust the treatment and hero-number style for readability.", "/images/screens/latest/themes.webp", "Fawnly theme picker previewing Sheep Meadow with Clear, Fade, Wash, and Tint treatments and other illustrated themes"],
+  ["Share progress, thoughtfully", "Create polished day, week, or month cards. Route cards use a normalized silhouette instead of an Apple Maps background or raw coordinates.", "/images/screens/latest/share-card.webp", "Fawnly day share card in the Heart Bloom theme showing 4,645 steps"],
 ];
 
 export function ScreenshotStory() {
@@ -125,6 +126,15 @@ const themes = [
   ["Fawn Pond", "pond"],
   ["Heart Bloom", "rose"],
   ["Sheep Meadow", "meadow"],
+  ["Maple Brook", "maple"],
+];
+
+const widgets = [
+  ["sheep-meadow", "Sheep Meadow"],
+  ["fawn-pond", "Fawn Pond"],
+  ["honeydew-meadow", "Honeydew Meadow"],
+  ["maple-brook", "Maple Brook"],
+  ["heart-bloom", "Heart Bloom"],
 ];
 
 export function Themes() {
@@ -133,14 +143,13 @@ export function Themes() {
       <div className="wrap">
         <div className="section-intro">
           <div><span className="eyebrow themes-eyebrow">Calm or illustrated</span><h2 className="h2">A little color<br /><span className="serif">goes a long way.</span></h2></div>
-          <p className="muted">Move from a quiet classic palette to an illustrated pond, meadow, or bloom—then choose Clear, Fade, Wash, or Tint.</p>
+          <p className="muted">Move from a quiet classic palette to an illustrated pond, meadow, brook, or bloom—then choose Clear, Fade, Wash, or Tint. With Fawnly Plus, your Home Screen widget wears the same theme.</p>
         </div>
         <div className="theme-grid">{themes.map(([name, style]) => <div className={`theme ${style}`} key={name}>{name}</div>)}</div>
-        <div className="theme-showcase" aria-label="Fawnly illustrated theme previews">
-          <PhoneMockup sizes="(max-width: 850px) 31vw, 225px" src="/images/screens/latest/home-honeydew-meadow.webp" alt="Fawnly Honeydew Meadow illustrated theme with a frog and melons" />
-          <PhoneMockup sizes="(max-width: 850px) 31vw, 225px" src="/images/screens/latest/home-fawn-pond.webp" alt="Fawnly Fawn Pond illustrated theme with a deer beside a pond" />
-          <PhoneMockup sizes="(max-width: 850px) 31vw, 225px" src="/images/screens/latest/home-heart-bloom.webp" alt="Fawnly Heart Bloom illustrated pink theme" />
+        <div className="widget-showcase" aria-label="Fawnly themed Home Screen widgets">
+          {widgets.map(([file, name]) => <img key={file} src={`/images/widgets/${file}-520w.webp`} srcSet={`/images/widgets/${file}-520w.webp 520w, /images/widgets/${file}.webp 1030w`} sizes="(max-width: 850px) 46vw, 340px" width={1030} height={484} loading="lazy" decoding="async" alt={`Fawnly medium Home Screen widget in the ${name} theme showing today’s steps, goal progress, distance, calories, and floors`} />)}
         </div>
+        <p className="widget-note">Themed widgets with Fawnly Plus</p>
       </div>
     </section>
   );
@@ -164,6 +173,7 @@ export function Plus() {
         <div><span className="eyebrow plus-eyebrow">Go further with Fawnly Plus</span><h2 className="h2">More ways to move.<br /><span className="serif">More ways to make it yours.</span></h2><p>Fawnly Plus is an optional monthly or yearly subscription. Localized pricing is shown before purchase.</p><AppStoreButton /></div>
         <ul>
           <li>All premium and illustrated themes</li>
+          <li>Home Screen widgets in your theme</li>
           <li>Custom hero fonts and distance-first Home</li>
           <li>Month and Year history, plus older periods</li>
           <li>Week and Month share cards</li>

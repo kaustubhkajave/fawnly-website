@@ -99,17 +99,18 @@ img { max-width: 100%; }
 .themes .h2 { color: #f5f2e8; }
 .themes .muted { color: #becdc0; }
 .themes-eyebrow { color: #e5ba78; }
-.theme-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.theme-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
 .theme { display: flex; align-items: end; min-height: 148px; padding: 15px; border-radius: 22px; font-size: .7rem; font-weight: 750; }
 .theme.green { background: linear-gradient(145deg, #dcebe2, #b8d8c4); color: #123b2c; }
 .theme.honeydew { background: linear-gradient(145deg, #eef4bf, #a7cb6d); color: #244b2b; }
 .theme.pond { background: linear-gradient(145deg, #70c8dd 0 58%, #d56a1b 58%); color: #102f3b; }
 .theme.rose { background: linear-gradient(145deg, #f2bdcf, #d8387c); color: #692238; }
 .theme.meadow { background: linear-gradient(145deg, #d8f0c0, #3b8d4f); color: #143d27; }
-.theme-showcase { display: flex; align-items: end; justify-content: center; gap: clamp(12px, 3vw, 36px); max-width: 900px; margin: 62px auto -170px; }
-.theme-showcase .device-shot { width: min(225px, 25vw); }
-.theme-showcase .device-shot:nth-child(1) { transform: rotate(-5deg) translateY(18px); }
-.theme-showcase .device-shot:nth-child(3) { transform: rotate(5deg) translateY(18px); }
+.theme.maple { background: linear-gradient(145deg, #f3dcb8, #b4472a); color: #4a1f12; }
+.widget-showcase { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; max-width: 1110px; margin: 62px auto 0; }
+.widget-showcase img { width: min(340px, 100%); height: auto; filter: drop-shadow(0 18px 28px #0000004d); }
+.widget-note { margin: 22px 0 0; color: #e5ba78; font-size: .78rem; font-weight: 750; text-align: center; }
+.blog-widget { display: block; width: min(420px, 100%); height: auto; margin: 0 auto 16px; filter: drop-shadow(0 18px 28px #123a2030); }
 
 .privacy-callout { padding-block: 88px; }
 .privacy-card { padding: 46px 50px; background: #edf3ed; }
@@ -249,8 +250,8 @@ img { max-width: 100%; }
   .activity-phone { width: min(285px, 72vw); }
   .theme-grid { grid-template-columns: repeat(2, 1fr); }
   .theme { min-height: 110px; }
-  .theme-showcase { gap: 5px; margin: 48px auto -118px; }
-  .theme-showcase .device-shot { width: 31vw; }
+  .widget-showcase { gap: 10px; margin-top: 40px; }
+  .widget-showcase img { width: calc(50% - 5px); }
   .privacy-card { padding: 34px 28px; }
   .blog-grid, .support-list { grid-template-columns: 1fr; }
   .footer-grid, .footer-bottom { display: block; }
